@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 
-frame = cv2.imread("coins.jpg")
+frame = cv2.imread("cube.jpg")
 
 
 frame = cv2.resize(frame, (640,480))
@@ -15,7 +15,7 @@ thresh = cv2.adaptiveThreshold(gray_blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
 
 kernel = np.ones((5, 5), np.uint8)
 closing = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE,
-	kernel, iterations=4)
+	kernel, iterations=2)
 
 closing_img = closing.copy()
 im2, contours, hierarchy = cv2.findContours(closing_img,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)

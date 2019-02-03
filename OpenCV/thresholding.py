@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
     
-img = cv2.imread('tofo.jpg',0)
+img = cv2.imread('cube.jpg',0)
 
 plt.imshow(img)
 

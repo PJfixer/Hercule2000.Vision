@@ -9,7 +9,7 @@ frame = cv2.resize(frame, (640,480))
 
 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-#gray_blur = cv2.GaussianBlur(gray, (15, 15), 0)
+gray_blur = cv2.GaussianBlur(gray, (15, 15), 0)
 thresh = cv2.threshold(gray, 0, 255,cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
 
 kernel = np.ones((3, 3), np.uint8)
