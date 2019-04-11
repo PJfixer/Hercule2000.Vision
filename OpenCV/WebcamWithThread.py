@@ -38,13 +38,13 @@ while fps._numFrames < args["num_frames"]:
 	fps.update()
 	
 
-	#sharpen = cv2.filter2D(frame, -1, kernel)
-	#edges = cv2.Canny(frame,100,200)
+	sharpen = cv2.filter2D(frame, -1, kernel)
+	edges = cv2.Canny(frame,100,200)
 
 
 	# check to see if the frame should be displayed to our screen
 	if args["display"] > 0:
-		cv2.imshow("Frame",frame)
+		cv2.imshow("Frame",edges)
 		key = cv2.waitKey(1) & 0xFF
  
 	# update the FPS counter

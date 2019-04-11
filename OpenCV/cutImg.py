@@ -11,7 +11,7 @@ y_start = 0
 y_end = 160
 index = 0 
 
-img = cv2.imread('Cube.jpg')
+img = cv2.imread('CubeCenter.jpg')
 img = cv2.resize(img, (640,480)) # x & y
 #gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 #roi_gray = gray[0:480, 0:640]# y & x
@@ -42,8 +42,8 @@ for i in range(3):
 	x_end += 212
 
 """for x in SubImgarray:
-	cv2.imshow("part of Cube",x)"""
-
+	cv2.imshow("part of Cube",x)
+	cv2.waitKey(0)"""
 
 
 
@@ -51,3 +51,4 @@ for i in range(3):
 cv2.imshow("full picture",img)
 if cv2.waitKey(0) & 0xff == 27:
     cv2.destroyAllWindows()
+    

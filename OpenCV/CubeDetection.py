@@ -13,14 +13,14 @@ def get_cube(input_image,rgb_code,thresh):
 	kernel = np.ones((5, 5), np.uint8)
 	closing = cv2.morphologyEx(mask, cv2.MORPH_CLOSE,
 	kernel, iterations=6)
-	#cv2.imshow('closing',closing)
+	cv2.imshow('closing',closing)
 	cnts = cv2.findContours(closing.copy(), cv2.RETR_EXTERNAL,
 	cv2.CHAIN_APPROX_SIMPLE)
 	#cnts = imutils.grab_contours(cnts)
 	(_,cnts_count,_) = cv2.findContours(closing.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 	return((len(cnts_count)))
 	
-frame = cv2.imread('pic1.jpeg') #load images from disk 
+frame = cv2.imread('Cube.jpg') #load images from disk 
 bgr_blue = [212,151,83] # code rgb de la couleur a chercher
 bgr_green = [108,109,41] # code rgb de la couleur a chercher
 thresh = 15  # seuil de tolerance pour tresholding
