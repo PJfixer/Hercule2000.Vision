@@ -9,9 +9,11 @@ x_start = 0
 x_end = 212
 y_start = 0
 y_end = 160
-index = 0 
+index = 0
 
-img = cv2.imread('CubeCenter.jpg')
+#img = cv2.imread('CubeCenter.jpg)
+cam = cv2.VideoCapture(1)
+ret, img = cam.read()
 img = cv2.resize(img, (640,480)) # x & y
 #gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 #roi_gray = gray[0:480, 0:640]# y & x
@@ -21,9 +23,9 @@ for i in range(3):
 	y_end = 160
 	for j in range(3):
 		b,g,r = cv2.split(img)
-		sub_b= b[y_start:y_end,x_start:x_end] 
-		sub_g= g[y_start:y_end,x_start:x_end] 
-		sub_r= r[y_start:y_end,x_start:x_end] 
+		sub_b= b[y_start:y_end,x_start:x_end]
+		sub_g= g[y_start:y_end,x_start:x_end]
+		sub_r= r[y_start:y_end,x_start:x_end]
 		sub_img=cv2.merge((sub_b,sub_g,sub_r))
 		SubImgarray.append(sub_img)
 		print("i = "+str(i))
@@ -51,4 +53,3 @@ for i in range(3):
 cv2.imshow("full picture",img)
 if cv2.waitKey(0) & 0xff == 27:
     cv2.destroyAllWindows()
-    

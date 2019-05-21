@@ -1,9 +1,11 @@
 from HerculeVision import *
 import numpy as np
-ImgArray = GetSegmentedImage()
-bgr_blue = [212,151,83] # code rgb de la couleur a chercher
-bgr_green = [108,109,41] # code rgb de la couleur a chercher
-makris = getBoard(ImgArray,bgr_blue,bgr_green,15)
+
+HV = HerculeVision()
+
+#HV.loadCalibdata()
+#ImgArray = HV.GetSegmentedImage()
+makris = HV.getBoard(5)
 print(makris)
 
 """ImgIndex = 0
